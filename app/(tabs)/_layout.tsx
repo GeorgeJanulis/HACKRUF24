@@ -38,7 +38,7 @@ export default function TabLayout() {
       <Tabs.Screen 
         name="info" 
         options={{ 
-            title: 'Info',
+            title: 'Destination',
             tabBarIcon: ({ color, focused }) => (
                 <Ionicons name={focused ? 'map-sharp' : 'map'} color={color} size={24}/>
             ),
@@ -47,9 +47,9 @@ export default function TabLayout() {
       <Tabs.Screen 
         name="info2" 
         options={{ 
-            title: 'Info2',
+            title: 'Origin',
             tabBarIcon: ({ color, focused }) => (
-                <Ionicons name={focused ? 'map-sharp' : 'map'} color={color} size={24}/>
+                <Ionicons name={focused ? 'location-sharp' : 'location'} color={color} size={24}/>
             ),
             }} 
         />

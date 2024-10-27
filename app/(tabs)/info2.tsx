@@ -6,7 +6,8 @@ import SearchFilter from '@/components/searchFilter';
 
 const PlaceholderImage = require('@/assets/images/globe.png');
 
-export let toValue = ""
+export let fromValue = ""
+export let makeSchedule = 0;
 export default function Info()
 {
     //const AppBody = () => {
@@ -17,8 +18,8 @@ export default function Info()
 
     const [searchQuery,setSearchQuery] = useState("");
     const storeFrom = () =>{
-    toValue = searchQuery;
-    console.log("worked 1 "+toValue+"\n");
+    fromValue = searchQuery;
+    console.log("worked 1 "+fromValue+"\n");
   }
     return(
         <View style={styles.container}>

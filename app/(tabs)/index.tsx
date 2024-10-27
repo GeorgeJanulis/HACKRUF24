@@ -1,23 +1,51 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import { Link } from 'expo-router';
 import { Image } from 'expo-image';
+import { toValue } from './info';
+import { fromValue,makeSchedule} from "./info2";
 
-import Button from '@/components/Button';
 
 const PlaceholderImage = require('@/assets/images/map.png');
 const PlaceholderImage2 = require('@/assets/images/calendar.png');
 
+// var to="";
+// var from="";
+var mSchedule =0;
+
+export class Person {
+  from: string;
+  to: string;
+
+  constructor(data?: any)
+  {
+    this.from = data.from;
+    this.to = data.to;
+  }
+}
 
 export default function Index() {
+
+  const to = toValue;
+  const from = fromValue;
+    <View style={styles.container}>
+      <text style={styles.text}> Bus leaves at</text>
+      <Text style={styles.text}> Bus arrives at</Text>
+    </View>
+
+
+  
+  
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Upcoming Trips:</Text>
+
       <View style={styles.imageContainer}>
         <Image source={PlaceholderImage} style={styles.image}/>
       </View>
 
-      
 
+      <Text style={styles.text}> Destination: {to}</Text>
+      <Text style={styles.text}> Origin:{from} </Text>
       <Link href="/about" style={styles.button}>
         Plan your next trip!
       </Link>
