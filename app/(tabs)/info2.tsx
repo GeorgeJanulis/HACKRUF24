@@ -16,7 +16,7 @@ export default function Info()
     //}
 
     const [searchQuery,setSearchQuery] = useState("");
-    const storeTo = () =>{
+    const storeFrom = () =>{
     toValue = searchQuery;
     console.log("worked 1 "+toValue+"\n");
   }
@@ -34,9 +34,10 @@ export default function Info()
               autoCorrect={false}
               value = {searchQuery}
               onChangeText={(text)=> setSearchQuery(text)} 
-            />
-          <Link href="/info2" onPress={storeTo}>
-              <Text style={styles.text}>Next</Text>
+
+      />
+            <Link href="/" onPress={storeFrom} style={styles.button}>
+              Next
             </Link>
       <SearchFilter data ={infos} input ={searchQuery} setInput = {setSearchQuery}/>
 
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
 
   button: {
     fontSize: 20,
+    textAlign: 'center',
     textDecorationLine: 'underline',
     color: '#fff',
   },
@@ -108,6 +110,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     color: '#fff',
-    alignContent: 'center',
   },
 })
